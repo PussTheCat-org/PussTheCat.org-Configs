@@ -1,0 +1,44 @@
+server {
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+
+server_name invidious.pussthecat.org;
+
+
+# SSL
+
+ssl_certificate /etc/letsencrypt/live/pussthecat.org/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/pussthecat.org/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/pussthecat.org/chain.pem;
+
+
+# logging
+access_log /var/log/nginx/invidious.pussthecat.org.access.log default;
+error_log /var/log/nginx/invidious.pussthecat.org.error.log warn;
+
+
+#Auth
+auth_basic Semi-Private;
+auth_basic_user_file [REDACTED];
+
+        
+location / {
+proxy_pass http://localhost:3000;
+
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Scheme $scheme;
+	}
+}
+
+
+
+# HTTP redirect
+server {
+listen 80;
+
+server_name invidious.pussthecat.org;
+
+return 301 https://$host$request_uri;
+}
