@@ -13,6 +13,7 @@ ssl_trusted_certificate /etc/letsencrypt/live/pussthecat.org/chain.pem;
 
 
 # logging
+
 access_log /var/log/nginx/bibliogram.pussthecat.org.access.log default;
 error_log /var/log/nginx/bibliogram.pussthecat.org.error.log warn;
         
@@ -35,6 +36,7 @@ return 301 https://pussthecat.org/privacy/;
 
 
 # HTTP redirect
+
 server {
 listen 80;
 

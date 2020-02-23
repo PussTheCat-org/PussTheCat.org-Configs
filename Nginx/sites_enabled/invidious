@@ -13,11 +13,13 @@ ssl_trusted_certificate /etc/letsencrypt/live/pussthecat.org/chain.pem;
 
 
 # logging
+
 access_log /var/log/nginx/invidious.pussthecat.org.access.log default;
 error_log /var/log/nginx/invidious.pussthecat.org.error.log warn;
 
 
 #Auth
+
 auth_basic Semi-Private;
 auth_basic_user_file [REDACTED];
 
@@ -35,6 +37,7 @@ proxy_set_header X-Scheme $scheme;
 
 
 # HTTP redirect
+
 server {
 listen 80;
 

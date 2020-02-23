@@ -8,12 +8,14 @@ root /var/www/PussTheCat.org/public;
 
 
 # SSL
+
 ssl_certificate /etc/letsencrypt/live/pussthecat.org/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/pussthecat.org/privkey.pem;
 ssl_trusted_certificate /etc/letsencrypt/live/pussthecat.org/chain.pem;
 
 
 # logging
+
 access_log /var/log/nginx/pussthecat.org.access.log default;
 error_log /var/log/nginx/pussthecat.org.error.log warn;
 }
@@ -21,6 +23,7 @@ error_log /var/log/nginx/pussthecat.org.error.log warn;
 
 
 # HTTP redirect
+
 server {
 listen 80;
 
