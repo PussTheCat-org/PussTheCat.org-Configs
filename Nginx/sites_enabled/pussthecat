@@ -5,6 +5,7 @@ listen [::]:443 ssl http2;
 server_name pussthecat.org;
 
 root /var/www/PussTheCat.org/public;
+index index.html
 
 
 # SSL
