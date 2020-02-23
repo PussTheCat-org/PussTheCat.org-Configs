@@ -1,3 +1,3 @@
-# PussTheCat.org - Configs
+# [PussTheCat.org](https://pussthecat.org/) - Configs
 
-The PussTheCat.org config files.
+The [PussTheCat.org](https://pussthecat.org/) config files.
