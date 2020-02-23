@@ -12,7 +12,7 @@ search:
 server:
     port : 8888
     bind_address : "127.0.0.1" # address to listen on
-    secret_key : "7f1bde77a57d01f504cd042ca3b0c3a52fc24292a5f94d26905128082e1b3e8c"
+    secret_key : "[REDACTED]"
     base_url : https://searx.pussthecat.org # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
     image_proxy : True # Proxying image results through searx
     http_protocol_version : "1.0"  # 1.0 and 1.1 are supported
