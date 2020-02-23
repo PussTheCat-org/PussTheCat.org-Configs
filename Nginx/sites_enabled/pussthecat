@@ -26,6 +26,7 @@ error_log /var/log/nginx/pussthecat.org.error.log warn;
 
 server {
 listen 80;
+listen [::]:80;
 
 server_name pussthecat.org;
 

@@ -39,6 +39,7 @@ return 301 https://pussthecat.org/privacy/;
 
 server {
 listen 80;
+listen [::]:80;
 
 server_name bibliogram.pussthecat.org;
 
