@@ -1,5 +1,5 @@
-channel_threads: 1
-feed_threads: 1
+channel_threads: 4
+feed_threads: 2
 db:
   user: kemal
   password: kemal
