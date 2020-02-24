@@ -14,7 +14,7 @@ ssl_trusted_certificate /etc/letsencrypt/live/pussthecat.org/chain.pem;
 
 # logging
 
-access_log /var/log/nginx/invidious.pussthecat.org.access.log default;
+#access_log /var/log/nginx/invidious.pussthecat.org.access.log default;
 error_log /var/log/nginx/invidious.pussthecat.org.error.log warn;
 
 
