@@ -38,7 +38,7 @@ proxy_redirect http:// https://;
 }
 
 location /robots.txt {
-root /var/www/PussTheCat.org/public/robots.txt;
+root /var/www/PussTheCat.org/public;
 }
 
 }

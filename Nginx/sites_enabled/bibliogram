@@ -37,7 +37,7 @@ return 301 https://pussthecat.org/privacy/;
 }
 
 location /robots.txt {
-root /var/www/PussTheCat.org/public/robots.txt;
+root /var/www/PussTheCat.org/public;
 }
 
 }
