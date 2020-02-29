@@ -22,7 +22,8 @@ error_log /var/log/nginx/pussthecat.org.error.log warn;
 
 location / {
 return 301 https://pussthecat.org/;
-	}
+}
+
 }
 
 
