@@ -102,7 +102,7 @@ engines:
   - name : bing news
     engine : bing_news
     shortcut : bin
-    disabled : True
+    disabled : False
 
   - name : bing videos
     engine : bing_videos
@@ -567,7 +567,7 @@ engines:
     engine : qwant
     shortcut : qwn
     categories : news
-    disabled : True
+    disabled : False
 
   - name : qwant social
     engine : qwant
