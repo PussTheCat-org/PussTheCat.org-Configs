@@ -8,6 +8,10 @@ module.exports = {
                 ressource_cache_time: 3*60*60*1000,
                 db_request_history: true,
         },
+        default_user_settings: {
+                rewrite_youtube: "invidious.snopyta.org",
+                rewrite_twitter: "nitter.pussthecat.org"
+        },
         use_assistant: {
                 enabled: true,
                 assistants: [
