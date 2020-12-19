@@ -15,9 +15,6 @@ external_port: 443
 registration_enabled: false
 login_enabled: false
 
-# disable the "top", showing most watched videos on this instance
-top_enabled: false
-
 
 default_user_preferences:
   # enable proxy mode
@@ -26,7 +23,7 @@ default_user_preferences:
   quality: dash
   # disable the video suggestion
   related_videos: false
-  # disable the trending / popular / top page
+  # disable the trending / popular page
   feed_menu: []
   # only allow the youtube comments
   comments: ["youtube",""]
