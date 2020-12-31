@@ -1,11 +1,13 @@
 channel_threads: 4
 feed_threads: 4
+
 db:
   user: kemal
   password: kemal
   host: localhost
   port: 5432
   dbname: invidious
+
 full_refresh: false
 https_only: true
 domain: invidious.pussthecat.org
@@ -15,17 +17,23 @@ external_port: 443
 registration_enabled: false
 login_enabled: false
 
+# disable the "popular" list
+popular_enabled: false
 
 default_user_preferences:
   # enable proxy mode
   local: true
   # dash by default to enable 1080p
   quality: dash
+  # set dash quality to use the best possible quality by default
+  quality_dash: best
   # disable the video suggestion
   related_videos: false
-  # disable the trending / popular page
+  # set the default home to nothing - BROKEN
+  # default_home: []
+  # disable the trending / popular pages
   feed_menu: []
   # only allow the youtube comments
   comments: ["youtube",""]
-  # your eyes will like it
+  # dark theme everything
   dark_mode: true
