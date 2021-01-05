@@ -9,7 +9,7 @@ module.exports = {
                 db_request_history: true,
         },
         default_user_settings: {
-                rewrite_youtube: "invidious.snopyta.org",
+                rewrite_youtube: "invidio.us",
                 rewrite_twitter: "nitter.pussthecat.org"
         },
         use_assistant: {
