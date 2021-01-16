@@ -1,20 +1,20 @@
 general:
     debug : False # Debug mode, only for development
-    instance_name : "SearX by PussTheCat.org" # displayed name
+    instance_name : "searx" # displayed name
 
 search:
     safe_search : 0 # Filter results. 0: None, 1: Moderate, 2: Strict
     autocomplete : "" # Existing autocomplete backends: "dbpedia", "duckduckgo", "google", "startpage", "swisscows", "qwant", "wikipedia" - leave blank to turn it off by default
-    default_lang : "en-US" # Default search language - leave blank to detect from browser information or use codes from 'languages.py'
+    default_lang : "" # Default search language - leave blank to detect from browser information or use codes from 'languages.py'
     ban_time_on_fail : 5 # ban time in seconds after engine errors
     max_ban_time_on_fail : 120 # max ban time in seconds after engine errors
 
 server:
     port : 8888
     bind_address : "127.0.0.1" # address to listen on
-    secret_key : "[REDACTED]"
-    base_url : https://searx.pussthecat.org # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
-    image_proxy : True # Proxying image results through searx
+    secret_key : "d4ffebf49ceca52048594203f5d9ad99d426482d234979d2dfac83e14d8739a0"
+    base_url : False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
+    image_proxy : False # Proxying image results through searx
     http_protocol_version : "1.0"  # 1.0 and 1.1 are supported
     method: "POST" # POST queries are more secure as they don't show up in history but may cause problems when using Firefox containers
     default_http_headers:
@@ -30,7 +30,7 @@ ui:
     default_theme : oscar # ui theme
     default_locale : "" # Default interface locale - leave blank to detect from browser information or use codes from the 'locales' config section
     theme_args :
-        oscar_style : logicodev-dark # default style of oscar
+        oscar_style : logicodev # default style of oscar
 #   results_on_new_tab: False  # Open result links in a new tab by default
 #   categories_order :
 #     - general
@@ -104,12 +104,10 @@ engines:
     engine : ahmia
     categories : onions
     shortcut : ah
-    disabled: True
 
   - name : arch linux wiki
     engine : archlinux
     shortcut : al
-    disabled: True
 
   - name : archive is
     engine : xpath
@@ -127,7 +125,6 @@ engines:
     shortcut : arx
     categories : science
     timeout : 4.0
-    disabled: True
 
 #  tmp suspended:  dh key too small
 #  - name : base
@@ -154,7 +151,6 @@ engines:
   - name : bing videos
     engine : bing_videos
     shortcut : biv
-    disabled: True
 
   - name : bitbucket
     engine : xpath
@@ -171,7 +167,6 @@ engines:
   - name : btdigg
     engine : btdigg
     shortcut : bt
-    disabled: True
 
   - name : ccc-tv
     engine : xpath
@@ -193,24 +188,20 @@ engines:
     content_query : fullCitation
     categories : science
     shortcut : cr
-    disabled: True
 
   - name : currency
     engine : currency_convert
     categories : general
     shortcut : cc
-    disabled: True
 
   - name : deezer
     engine : deezer
     shortcut : dz
-    disabled: True
 
   - name : deviantart
     engine : deviantart
     shortcut : da
     timeout : 3.0
-    disabled: True
 
   - name : ddg definitions
     engine : duckduckgo_definitions
@@ -265,11 +256,13 @@ engines:
   - name : duckduckgo
     engine : duckduckgo
     shortcut : ddg
+    disabled : True
 
   - name : duckduckgo images
     engine : duckduckgo_images
     shortcut : ddi
     timeout: 3.0
+    disabled : True
 
   - name : etools
     engine : etools
@@ -334,7 +327,6 @@ engines:
   - name : genius
     engine : genius
     shortcut : gen
-    disabled: True
 
   - name : gigablast
     engine : gigablast
@@ -345,7 +337,6 @@ engines:
   - name : gentoo
     engine : gentoo
     shortcut : ge
-    disabled: True
 
   - name : gitlab
     engine : json_engine
@@ -363,7 +354,6 @@ engines:
   - name : github
     engine : github
     shortcut : gh
-    disabled: True
 
     # This a Gitea service. If you would like to use a different instance,
     # change codeberg.org to URL of the desired Gitea host. Or you can create
@@ -381,12 +371,10 @@ engines:
   - name : google
     engine : google
     shortcut : go
-    disabled: True
 
   - name : google images
     engine : google_images
     shortcut : goi
-    disabled: True
 
   - name : google news
     engine : google_news
@@ -395,7 +383,6 @@ engines:
   - name : google videos
     engine : google_videos
     shortcut : gov
-    disabled: True
 
   - name : google scholar
     engine : xpath
@@ -482,7 +469,6 @@ engines:
     page_size : 20
     categories : it
     shortcut : ho
-    disabled: True
 
   - name : ina
     engine : ina
@@ -511,6 +497,7 @@ engines:
     content_xpath : //td/a[1][contains(@href,"=author")]/text()
     categories : general
     timeout : 7.0
+    disabled : True
     shortcut : lg
 
   - name : lobste.rs
@@ -544,7 +531,6 @@ engines:
   - name : mixcloud
     engine : mixcloud
     shortcut : mc
-    disabled: True
 
   - name : npm
     engine : json_engine
@@ -564,7 +550,6 @@ engines:
   - name : not evil
     engine : not_evil
     shortcut : ne
-    disabled: True
 
   - name : nyaa
     engine : nyaa
@@ -588,7 +573,6 @@ engines:
     categories : science
     shortcut : oad
     timeout: 5.0
-    disabled: True
 
   - name : openairepublications
     engine : json_engine
@@ -601,7 +585,6 @@ engines:
     categories : science
     shortcut : oap
     timeout: 5.0
-    disabled: True
 
 #  - name : opensemanticsearch
 #    engine : opensemantic
@@ -627,7 +610,6 @@ engines:
   - name : pdbe
     engine : pdbe
     shortcut : pdb
-    disabled: True
 # Hide obsolete PDB entries.
 # Default is not to hide obsolete structures
 #    hide_obsolete : False
@@ -635,7 +617,6 @@ engines:
   - name : photon
     engine : photon
     shortcut : ph
-    disabled: True
 
   - name : piratebay
     engine : piratebay
@@ -643,19 +624,18 @@ engines:
     # You may need to change this URL to a proxy if piratebay is blocked in your country
     url: https://thepiratebay.org/
     timeout : 3.0
-    disabled: True
 
   - name : pubmed
     engine : pubmed
     shortcut : pub
     categories: science
     timeout : 3.0
-    disabled: True
 
   - name : qwant
     engine : qwant
     shortcut : qw
     categories : general
+    disabled : True
 
   - name : qwant images
     engine : qwant
@@ -709,12 +689,10 @@ engines:
   - name : soundcloud
     engine : soundcloud
     shortcut : sc
-    disabled: True
 
   - name : stackoverflow
     engine : stackoverflow
     shortcut : st
-    disabled: True
 
   - name : searchcode code
     engine : searchcode_code
@@ -744,7 +722,6 @@ engines:
     content_xpath : .//div[@class="search-result-abstract"]
     shortcut : se
     categories : science
-    disabled: True
 
 # Spotify needs API credentials
 #  - name : spotify
@@ -757,6 +734,7 @@ engines:
     engine : startpage
     shortcut : sp
     timeout : 6.0
+    disabled : True
 
   - name : tokyotoshokan
     engine : tokyotoshokan
@@ -769,7 +747,6 @@ engines:
     shortcut : tor
     url: https://torrentz2.eu/
     timeout : 3.0
-    disabled: True
 
 # Requires Tor
   - name : torch
@@ -782,7 +759,6 @@ engines:
     content_xpath : ./td[2]/small
     categories : onions
     shortcut : tch
-    disabled: True
 
 # maybe in a fun category
 #  - name : uncyclopedia
@@ -802,6 +778,7 @@ engines:
 
   - name : unsplash
     engine : unsplash
+    disabled: True
     shortcut : us
 
   - name : yahoo
@@ -812,6 +789,7 @@ engines:
   - name : yandex
     engine : yandex
     shortcut : yn
+    disabled : True
 
   - name : yahoo news
     engine : yahoo_news
@@ -825,7 +803,6 @@ engines:
     #    api_key: 'apikey' # required!
     # Or you can use the html non-stable engine, activated by default
     engine : youtube_noapi
-    disabled: True
 
   # tmp suspended: Cloudflare CAPTCHA
   #- name : yggtorrent
@@ -838,12 +815,10 @@ engines:
   - name : dailymotion
     engine : dailymotion
     shortcut : dm
-    disabled: True
 
   - name : vimeo
     engine : vimeo
     shortcut : vm
-    disabled: True
 
   - name : wikibooks
     engine : mediawiki
@@ -917,12 +892,10 @@ engines:
     engine : wolframalpha_noapi
     timeout: 6.0
     categories : science
-    disabled: True
 
   - name : dictzone
     engine : dictzone
     shortcut : dc
-    disabled: True
 
   - name : mymemory translated
     engine : translated
