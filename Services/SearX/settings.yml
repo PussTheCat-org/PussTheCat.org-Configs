@@ -228,6 +228,7 @@ engines:
   - name : digg
     engine : digg
     shortcut : dg
+    disabled: True
 
   - name : erowid
     engine : xpath
