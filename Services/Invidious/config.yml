@@ -29,7 +29,7 @@ default_user_preferences:
   quality_dash: best
   # disable the video suggestion
   related_videos: false
-  # set the default home to nothing
+  # set the default home to a search engine layout page
   default_home: "Search"
   # disable the trending / popular pages
   feed_menu: []
