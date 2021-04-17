@@ -30,7 +30,7 @@ default_user_preferences:
   # disable the video suggestion
   related_videos: false
   # set the default home to nothing
-  default_home: ""
+  default_home: "Search"
   # disable the trending / popular pages
   feed_menu: []
   # only allow the youtube comments
