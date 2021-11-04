@@ -76,7 +76,7 @@ db:
 ## Accepted values: 1-65535
 ## Default: <none>
 ##
-external_port: 443
+#external_port:
 
 ##
 ## Interface address to listen on for incoming connections.
@@ -95,7 +95,7 @@ external_port: 443
 ## Accepted values: a fully qualified domain name (FQDN)
 ## Default: <none>
 ##
-domain: invidious.pussthecat.org
+domain:
 
 ##
 ## Tell Invidious that it is behind a proxy that provides only
@@ -106,7 +106,7 @@ domain: invidious.pussthecat.org
 ## Accepted values: true, false
 ## Default: false
 ##
-https_only: true
+https_only: false
 
 ##
 ## Enable/Disable 'Strict-Transport-Security'. Make sure that
@@ -216,7 +216,7 @@ https_only: true
 ## Accepted values: true, false
 ## Default: true
 ##
-popular_enabled: false
+#popular_enabled: true
 
 ##
 ## Enable/Disable statstics (available at /api/v1/stats).
@@ -252,7 +252,7 @@ popular_enabled: false
 ## Accepted values: true, false
 ## Default: true
 ##
-registration_enabled: false
+#registration_enabled: true
 
 ##
 ## Allow/Forbid users to log-in. This setting affects the ability
@@ -261,7 +261,7 @@ registration_enabled: false
 ## Accepted values: true, false
 ## Default: true
 ##
-login_enabled: false
+#login_enabled: true
 
 ##
 ## Enable/Disable the captcha challenge on the login page.
@@ -312,7 +312,7 @@ login_enabled: false
 ## Accepted values: a positive integer
 ## Default: 1
 ##
-channel_threads: 4
+channel_threads: 1
 
 ##
 ## Forcefully dump and re-download the entire list of uploaded
@@ -334,7 +334,7 @@ full_refresh: false
 ## Accepted values: a positive integer
 ## Default: 1
 ##
-feed_threads: 4
+feed_threads: 1
 
 ##
 ## Enable/Disable the polling job that keeps the decryption
@@ -569,7 +569,7 @@ default_user_preferences:
   ## Accepted values: true, false
   ## Default: <none>
   ##
-  dark_mode: true
+  #dark_mode:
 
   ##
   ## Enable/Disable thin mode (no video thumbnails).
@@ -591,7 +591,7 @@ default_user_preferences:
   ##
   ## Default: ["Popular", "Trending", "Subscriptions", "Playlists"]  (show all feeds)
   ##
-  feed_menu: []
+  #feed_menu: ["Popular", "Trending", "Subscriptions", "Playlists"]
 
   ##
   ## Default feed to diplay on the home page.
@@ -602,7 +602,7 @@ default_user_preferences:
   ## Accepted values: Popular, Trending, Subscriptions, Playlists, <none>
   ## Default: Popular
   ##
-  default_home: Search
+  #default_home: Popular
 
   ##
   ## Default number of results to display per page.
@@ -641,7 +641,7 @@ default_user_preferences:
   ##
   ## Default: ["youtube", ""]
   ##
-  comments: ["youtube", ""]
+  #comments: ["youtube", ""]
 
   ##
   ## Default player style.
@@ -658,7 +658,7 @@ default_user_preferences:
   ## Accepted values: true, false
   ## Default: true
   ##
-  related_videos: false
+  #related_videos: true
 
 
   # -----------------------------
@@ -719,7 +719,7 @@ default_user_preferences:
   ## Accepted values: dash, hd720, medium, small
   ## Default: hd720
   ##
-  quality: dash
+  #quality: hd720
 
   ##
   ## Default dash video quality.
@@ -732,7 +732,7 @@ default_user_preferences:
   ##    720p, 480p, 360p, 240p, 144p, worst
   ## Default: auto
   ##
-  quality_dash: best
+  #quality_dash: auto
 
   ##
   ## Default video playback speed.
@@ -826,7 +826,7 @@ default_user_preferences:
   ## Accepted values: true, false
   ## Default: false
   ##
-  local: true
+  #local: false
 
   ##
   ## Show the connected user's nick at the top right.
