@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   lingva:
     container_name: lingva
     image: thedaviddelta/lingva-translate:latest
