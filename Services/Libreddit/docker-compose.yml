@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  libreddit:
+    container_name: libreddit
+    image: spikecodes/libreddit:latest
+    restart: unless-stopped
+    environment:
+      - LIBREDDIT_DEFAULT_THEME=dark
+      - LIBREDDIT_DEFAULT_LAYOUT=compact
+      - LIBREDDIT_DEFAULT_COMMENT_SORT=top
+      - LIBREDDIT_DEFAULT_POST_SORT=top
+      - LIBREDDIT_DEFAULT_SHOW_NSFW=on
+      - LIBREDDIT_DEFAULT_USE_HLS=on
+    ports:
+      - 127.0.0.1:9995:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/settings"]
+      interval: 5m
+      timeout: 3s
