@@ -623,7 +623,7 @@ default_user_preferences:
   ## Accepted values: true, false
   ## Default: false
   ##
-  #annotations: false
+  annotations: true
 
   ##
   ## Show/hide annotation.
@@ -631,7 +631,7 @@ default_user_preferences:
   ## Accepted values: true, false
   ## Default: false
   ##
-  #annotations_subscribed: false
+  annotations_subscribed: true
 
   ##
   ## Type of comments to display below video.
@@ -732,7 +732,7 @@ default_user_preferences:
   ##    720p, 480p, 360p, 240p, 144p, worst
   ## Default: auto
   ##
-  quality_dash: best
+  quality_dash: 1080p
 
   ##
   ## Default video playback speed.
