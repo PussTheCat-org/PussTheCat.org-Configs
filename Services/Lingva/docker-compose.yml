@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  lingva:
+    container_name: lingva
+    image: thedaviddelta/lingva-translate:latest
+    restart: unless-stopped
+    environment:
+      - site_domain=lingva.pussthecat.org
+      - dark_theme=true
+    ports:
+      - 127.0.0.1:1111:3000
