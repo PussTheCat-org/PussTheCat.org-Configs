@@ -17,7 +17,6 @@ module.exports = {
                 assistants: [
                         {
                                 origin: "https://bibliogram.art",
-                                key: "[REDACTED]",
                         },
                 ],
         },
