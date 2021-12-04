@@ -14,7 +14,7 @@ services:
       - LIBREDDIT_DEFAULT_SHOW_NSFW=no
       - LIBREDDIT_DEFAULT_USE_HLS=on
     ports:
-      - 127.0.0.1:9995:8080
+      - 127.0.0.1:2006:8080
     healthcheck:
       test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost:8080/settings"]
       interval: 5m
