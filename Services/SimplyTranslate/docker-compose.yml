@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  simplytranslate:
+    image: quay.io/pussthecatorg/simplytranslate:latest
+    container_name: simplytranslate
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - "/docker/simplytranslate/config.conf:/etc/simplytranslate/web.conf" 
