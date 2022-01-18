@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  rimgo:
+    image: quay.io/pussthecatorg/rimgo:latest
+    container_name: rimgo
+    ports:
+      - "127.0.0.1:2010:3000"
+    volumes:
+      - /docker/rimgo/config.yml:/app/config.yml
+    restart: unless-stopped
