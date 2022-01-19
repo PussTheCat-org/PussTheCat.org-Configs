@@ -1,0 +1,37 @@
+DOMAIN: 'https://librarian.pussthecat.org'
+PORT: '3000'
+# Running a custom API server is not recommended and is not suitable for a public instance
+API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
+# Use a custom video streaming endpoint (if using custom API server or proxying videos)
+VIDEO_STREAMING_URL: ''
+STREAMING_API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
+USE_HTTP3: false
+FIBER_PREFORK: false
+# Block access to claims in case of DMCA
+BLOCKED_CLAIMS: ''
+# AUTH_TOKEN and HMAC_KEY is automatically generated
+AUTH_TOKEN: ''
+HMAC_KEY: ''
+# Create IMAGE_CACHE_DIR before enabling image caching
+IMAGE_CACHE: 'true'
+IMAGE_CACHE_DIR: '/var/cache/librarian'
+# Instance privacy: This is required to get your instance listed. For more info,
+# See: https://codeberg.org/librarian/librarian/wiki/Instance-privacy
+INSTANCE_PRIVACY:
+# This is the default if you are using NGINX and have not disabled data collection.
+# Read https://codeberg.org/librarian/librarian/wiki/Instance-privacy
+  DATA_NOT_COLLECTED: false
+  DATA_COLLECTED_IP: false
+  DATA_COLLECTED_URL: true
+  DATA_COLLECTED_DEVICE: true
+  DATA_COLLECTED_DIAGNOSTIC_ONLY: false
+  # The country your instance is located. Leave blank if hosting on darknet.
+  INSTANCE_COUNTRY: "Germany"
+  # Put the name of your hosting provider. If hosting from home, use the name of your ISP. Leave blank if hosting on darknet.
+  INSTANCE_PROVIDER: ""
+  # Cloudflare use is discouraged. You can set this to false if it is not proxied (gray cloud icon)
+  INSTANCE_CLOUDFLARE: false
+  # Optional: Explain your usage of data (if collected) and how it is stored.
+  MESSAGE: ""
+  # Link to your privacy policy, leave blank if you don't have one.
+  PRIVACY_POLICY: "https://pussthecat.org/privacy/"

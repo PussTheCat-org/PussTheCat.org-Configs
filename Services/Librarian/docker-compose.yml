@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  librarian:
+    image: nineteengladespool/librarian:latest
+    container_name: librarian
+    ports:
+      - "127.0.0.1:2011:3000"
+    volumes:
+      - /docker/librarian/config.yml:/app/config.yml
+      - /docker/librarian/cache/:/var/cache/librarian
+    restart: unless-stopped
