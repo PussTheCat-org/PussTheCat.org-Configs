@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  nitter:
+    image: zedeus/nitter:latest
+    container_name: nitter
+    ports:
+      - "127.0.0.1:2002:8080"
+    volumes:
+      - /docker/nitter/nitter.conf:/src/nitter.conf
+    depends_on:
+      - nitter-redis
+    restart: unless-stopped
+
+  nitter-redis:
+    image: redis:6-alpine
+    container_name: nitter-redis
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - /docker/nitter/redis:/data
+    restart: unless-stopped
