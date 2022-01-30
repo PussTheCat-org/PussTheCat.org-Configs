@@ -1,6 +1,5 @@
 module.exports = {
         website_origin: "https://bibliogram.pussthecat.org",
-        port: 2003,
         has_privacy_policy: true,
         tor: {
                 for: {
