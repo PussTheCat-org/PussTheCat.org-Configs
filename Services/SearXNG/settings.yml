@@ -1266,6 +1266,7 @@ engines:
     timeout: 6.0
     additional_tests:
       rosebud: *test_rosebud
+    disabled: true
 
   - name: tokyotoshokan
     engine: tokyotoshokan
