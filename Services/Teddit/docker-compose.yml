@@ -30,7 +30,7 @@ services:
 
   teddit-redis:
     container_name: teddit-redis
-    image: redis:6[VERSION]-alpine
+    image: redis:6.[VERSION]-alpine
     restart: unless-stopped
     command: redis-server
     environment:
