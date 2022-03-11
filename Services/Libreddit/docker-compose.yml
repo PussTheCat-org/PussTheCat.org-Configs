@@ -3,6 +3,7 @@ version: '3'
 services:
 
   libreddit:
+    network_mode: bridge # https://stackoverflow.com/a/57152380
     container_name: libreddit
     image: spikecodes/libreddit:latest
     restart: unless-stopped

@@ -3,6 +3,7 @@ version: "3"
 services:
 
   libretranslate:
+    network_mode: bridge # https://stackoverflow.com/a/57152380
     image: quay.io/pussthecatorg/libretranslate:latest
     container_name: libretranslate
     ports:

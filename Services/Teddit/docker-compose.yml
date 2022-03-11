@@ -5,6 +5,7 @@ services:
   teddit:
     container_name: teddit
     image: teddit/teddit:latest
+    restart: unless-stopped
     environment:
       - DOMAIN=teddit.pussthecat.org
       - THEME=dark
@@ -29,7 +30,8 @@ services:
 
   teddit-redis:
     container_name: teddit-redis
-    image: redis:6.2.5-alpine
+    image: redis:6[VERSION]-alpine
+    restart: unless-stopped
     command: redis-server
     environment:
       - REDIS_REPLICATION_MODE=master

@@ -3,6 +3,7 @@ version: "3"
 services:
 
   librarian:
+    network_mode: bridge # https://stackoverflow.com/a/57152380
     image: nineteengladespool/librarian:latest
     container_name: librarian
     ports:

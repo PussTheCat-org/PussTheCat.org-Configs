@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   nitter-redis:
-    image: redis:6-alpine
+    image: redis:6[VERSION]-alpine
     container_name: nitter-redis
     command: redis-server --save 60 1 --loglevel warning
     volumes:

@@ -3,6 +3,7 @@ version: '3'
 services:
 
   lingva:
+    network_mode: bridge # https://stackoverflow.com/a/57152380
     container_name: lingva
     image: thedaviddelta/lingva-translate:latest
     restart: unless-stopped
