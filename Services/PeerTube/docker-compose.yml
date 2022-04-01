@@ -1,0 +1,38 @@
+version: "3.3"
+
+services:
+
+  peertube:
+    container_name: peertube
+    image: chocobozzz/peertube:v[VERSION]-bullseye
+    env_file:
+      - .env
+    ports:
+     - "127.0.0.1:2016:9000"
+    volumes:
+      - peertube-assets:/app/client/dist
+      - /[REDACTED]/PeerTube:/data # Video storage isn't on the system drive
+      - /docker/peertube/config:/config
+    depends_on:
+      - peertube-postgres
+      - peertube-redis
+    restart: "no"
+
+  peertube-postgres:
+    container_name: peertube-postgres
+    image: postgres:[VERSION]-alpine
+    env_file:
+      - .env
+    volumes:
+      - /docker/peertube/db:/var/lib/postgresql/data
+    restart: "no"
+
+  peertube-redis:
+    container_name: peertube-redis
+    image: redis:[VERSION]-alpine
+    volumes:
+      - /docker/peertube/redis:/data
+    restart: "no"
+
+volumes:
+  peertube-assets:
