@@ -1,5 +1,7 @@
 DOMAIN: 'https://librarian.pussthecat.org'
 PORT: '3000'
+# Optional: Set address to bind to, example: 127.0.0.1
+ADDRESS: ''
 # Running a custom API server is not recommended and is not suitable for a public instance
 API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
 # Use a custom video streaming endpoint (if using custom API server or proxying videos)
@@ -15,6 +17,8 @@ HMAC_KEY: ''
 # Create IMAGE_CACHE_DIR before enabling image caching
 IMAGE_CACHE: 'true'
 IMAGE_CACHE_DIR: '/var/cache/librarian'
+# Live streams are proxied through the instance and may cause increased bandwidth usage.
+ENABLE_LIVE_STREAM: true
 # Instance privacy: This is required to get your instance listed. For more info,
 # See: https://codeberg.org/librarian/librarian/wiki/Instance-privacy
 INSTANCE_PRIVACY:
