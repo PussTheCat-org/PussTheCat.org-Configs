@@ -812,6 +812,12 @@ engines:
     timeout: 3.0
     disabled: false
 
+  - name: jisho
+    engine: jisho
+    shortcut: js
+    timeout: 3.0
+    disabled: true
+
   - name: kickass
     engine: kickass
     shortcut: kc
