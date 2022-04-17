@@ -524,6 +524,7 @@ engines:
   # - name: ebay
   #   engine: ebay
   #   shortcut: eb
+  #   base_url: 'https://www.ebay.com'
   #   disabled: true
   #   timeout: 5
 
