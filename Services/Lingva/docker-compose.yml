@@ -1,14 +1,14 @@
-version: '3'
-
 services:
 
   lingva:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
     container_name: lingva
-    image: thedaviddelta/lingva-translate:latest
+    image: docker.io/thedaviddelta/lingva-translate:latest
     restart: unless-stopped
-    environment:
-      - site_domain=lingva.pussthecat.org
-      - dark_theme=true
     ports:
-      - 127.0.0.1:1111:3000
+      - "127.0.0.1:1111:3000"
+    environment:
+      - "SITE_DOMAIN=lingva.pussthecat.org"
+      - "DARK_THEME=true"
+      - "DEFAULT_SOURCE_LANG=auto"
+      - "DEFAULT_TARGET_LANG=en"
+    network_mode: bridge # https://stackoverflow.com/a/57152380

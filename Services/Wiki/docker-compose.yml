@@ -1,5 +1,7 @@
 services:
+
   wiki:
+    container_name: wiki
     image: quay.io/pussthecatorg/wiki.pussthecat.org:latest
     restart: unless-stopped
     ports:

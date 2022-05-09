@@ -1,22 +1,20 @@
-version: "3"
-
 services:
 
   libretranslate:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
-    image: quay.io/pussthecatorg/libretranslate:latest
     container_name: libretranslate
+    image: quay.io/pussthecatorg/libretranslate:latest
+    restart: unless-stopped
     ports:
       - "127.0.0.1:2012:5000"
     environment:
-      - LT_CHAR_LIMIT=10000
-      - LT_REQ_LIMIT=15
-      - LT_BATCH_LIMIT=2
-      - LT_SSL=True
-      - LT_FRONTEND_LANGUAGE_SOURCE=en
-      - LT_FRONTEND_LANGUAGE_TARGET=fr
-      - LT_API_KEYS=True
+      - "LT_CHAR_LIMIT=10000"
+      - "LT_REQ_LIMIT=15"
+      - "LT_BATCH_LIMIT=2"
+      - "LT_SSL=True"
+      - "LT_FRONTEND_LANGUAGE_SOURCE=en"
+      - "LT_FRONTEND_LANGUAGE_TARGET=fr"
+      - "LT_API_KEYS=True"
     volumes:
-      - /docker/libretranslate/api_keys.db:/libretranslate/api_keys.db
-      - /docker/libretranslate/suggestions.db:/libretranslate/suggestions.db
-    restart: unless-stopped
+      - "/docker/libretranslate/api_keys.db:/libretranslate/api_keys.db"
+      - "/docker/libretranslate/suggestions.db:/libretranslate/suggestions.db"
+    network_mode: bridge # https://stackoverflow.com/a/57152380

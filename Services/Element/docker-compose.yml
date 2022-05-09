@@ -1,13 +1,11 @@
-version: '3'
-
 services:
 
   element:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
     container_name: element
-    image: vectorim/element-web:v[VERSION]
+    image: docker.io/vectorim/element-web:v[VERSION]
     restart: unless-stopped
-    volumes:
-      - /docker/element/config.json:/app/config.json
     ports:
-      - 127.0.0.1:1328:80
+      - "127.0.0.1:1328:80"
+    volumes:
+      - "/docker/element/config.json:/app/config.json"
+    network_mode: bridge # https://stackoverflow.com/a/57152380

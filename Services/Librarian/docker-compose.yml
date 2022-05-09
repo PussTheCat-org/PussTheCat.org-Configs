@@ -1,14 +1,12 @@
-version: "3"
-
 services:
 
   librarian:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
-    image: nineteengladespool/librarian:latest
     container_name: librarian
+    image: docker.io/nineteengladespool/librarian:latest
+    restart: unless-stopped
     ports:
       - "127.0.0.1:2011:3000"
     volumes:
-      - /docker/librarian/config.yml:/app/config.yml
-      - /docker/librarian/cache/:/var/cache/librarian
-    restart: unless-stopped
+      - "/docker/librarian/config.yml:/app/config.yml"
+      - "/docker/librarian/cache/:/var/cache/librarian"
+    network_mode: bridge # https://stackoverflow.com/a/57152380

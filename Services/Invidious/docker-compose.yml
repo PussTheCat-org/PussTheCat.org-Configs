@@ -1,4 +1,3 @@
-version: "3"
 services:
 
   invidious:
@@ -46,15 +45,15 @@ services:
 
   invidious-db:
     container_name: invidious-db
-    image: postgres:14.[VERSION]
+    image: docker.io/library/postgres:14.[VERSION]
     restart: unless-stopped
-    volumes:
-      - /docker/invidious/db:/var/lib/postgresql/data
-      - /docker/invidious/invidious/config/sql:/config/sql
-      - /docker/invidious/invidious/docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh
     environment:
       POSTGRES_DB: invidious
       POSTGRES_USER: kemal
       POSTGRES_PASSWORD: kemal
+    volumes:
+      - /docker/invidious/db:/var/lib/postgresql/data
+      - /docker/invidious/invidious/config/sql:/config/sql
+      - /docker/invidious/invidious/docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]

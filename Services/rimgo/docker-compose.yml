@@ -1,15 +1,13 @@
-version: "3"
-
 services:
 
   rimgo:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
-    image: quay.io/pussthecatorg/rimgo:latest
     container_name: rimgo
+    image: quay.io/pussthecatorg/rimgo:latest
+    restart: unless-stopped
     ports:
       - "127.0.0.1:2010:3000"
     environment:
       - "PORT=3000"
       - "ADDRESS=0.0.0.0"
       - "IMGUR_CLIENT_ID=546c25a59c58ad7"
-    restart: unless-stopped
+    network_mode: bridge # https://stackoverflow.com/a/57152380

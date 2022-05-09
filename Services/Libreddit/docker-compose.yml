@@ -1,22 +1,20 @@
-version: '3'
-
 services:
 
   libreddit:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
     container_name: libreddit
-    image: spikecodes/libreddit:latest
+    image: docker.io/spikecodes/libreddit:latest
     restart: unless-stopped
-    environment:
-      - LIBREDDIT_DEFAULT_THEME=dark
-      - LIBREDDIT_DEFAULT_LAYOUT=compact
-      - LIBREDDIT_DEFAULT_COMMENT_SORT=top
-      - LIBREDDIT_DEFAULT_POST_SORT=top
-      - LIBREDDIT_DEFAULT_SHOW_NSFW=off
-      - LIBREDDIT_DEFAULT_USE_HLS=on
     ports:
-      - 127.0.0.1:2006:8080
+      - "127.0.0.1:2006:8080"
+    environment:
+      - "LIBREDDIT_DEFAULT_THEME=dark"
+      - "LIBREDDIT_DEFAULT_LAYOUT=compact"
+      - "LIBREDDIT_DEFAULT_COMMENT_SORT=top"
+      - "LIBREDDIT_DEFAULT_POST_SORT=top"
+      - "LIBREDDIT_DEFAULT_SHOW_NSFW=off"
+      - "LIBREDDIT_DEFAULT_USE_HLS=on"
     healthcheck:
       test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost:8080/settings"]
       interval: 5m
       timeout: 3s
+    network_mode: bridge # https://stackoverflow.com/a/57152380

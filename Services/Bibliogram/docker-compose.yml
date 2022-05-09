@@ -1,14 +1,12 @@
-version: "3"
-
 services:
 
   bibliogram:
-    network_mode: bridge # https://stackoverflow.com/a/57152380
-    image: quay.io/pussthecatorg/bibliogram:latest
     container_name: bibliogram
+    image: quay.io/pussthecatorg/bibliogram:latest
+    restart: unless-stopped
     ports:
       - "127.0.0.1:2003:10407"
     volumes:
       - "/docker/bibliogram/db/:/app/db/"
       - "/docker/bibliogram/config.js:/app/config.js"
-    restart: unless-stopped
+    network_mode: bridge # https://stackoverflow.com/a/57152380
