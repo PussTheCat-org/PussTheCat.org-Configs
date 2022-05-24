@@ -20,7 +20,7 @@ services:
 
   proxitok-redis:
     container_name: proxitok-redis
-    image: docker.io/redis:6-alpine
+    image: docker.io/redis:[VERSION]-alpine
     restart: unless-stopped
     command: redis-server --save 60 1 --loglevel warning
 
