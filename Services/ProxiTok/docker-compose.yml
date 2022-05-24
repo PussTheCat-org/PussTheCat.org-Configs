@@ -11,23 +11,22 @@ services:
       - "API_CACHE=redis"
       - "REDIS_HOST=proxitok-redis"
       - "REDIS_PORT=6379"
-      - "API_BROWSER_URL=http://proxitok-chrome:9515"
+      - "API_SIGNER_URL=http://proxitok-signer:8080/signature"
     volumes:
       - "proxitok-cache:/cache"
     depends_on:
       - proxitok-redis
-      - proxitok-chrome
+      - proxitok-signer
 
   proxitok-redis:
     container_name: proxitok-redis
-    image: docker.io/redis:[VERSION]-alpine
+    image: docker.io/redis:6-alpine
     restart: unless-stopped
     command: redis-server --save 60 1 --loglevel warning
 
-  proxitok-chrome:
-    container_name: proxitok-chrome
-    image: docker.io/zenika/alpine-chrome:with-chromedriver
-    shm_size: 1g
+  proxitok-signer:
+    container_name: proxitok-signer
+    image: ghcr.io/pablouser1/signtok:master
 
 volumes:
   proxitok-cache:
