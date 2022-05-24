@@ -9,7 +9,6 @@ services:
     environment:
       - "LUCKY_ENV=production"
       - "PORT=8088"
-      - "DATABASE_URL=postgres://does@not/matter"
       - "APP_DOMAIN=scribe.pussthecat.org"
       - "SECRET_KEY_BASE=[REDACTED]"
     network_mode: bridge # https://stackoverflow.com/a/57152380
