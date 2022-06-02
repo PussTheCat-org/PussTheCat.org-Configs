@@ -15,10 +15,16 @@ BLOCKED_CLAIMS: 'claimid,claim2'
 AUTH_TOKEN: ''
 HMAC_KEY: ''
 # Create IMAGE_CACHE_DIR before enabling image caching
-IMAGE_CACHE: 'false'
+IMAGE_CACHE: false
 IMAGE_CACHE_DIR: '/var/cache/librarian'
-# Live streams are proxied through the instance and may cause increased bandwidth usage.
+IMAGE_CACHE_CLEANUP_INTERVAL: 24h
+# Live streams are proxied through the instance (unless LIVE_STREAMING_URL is set) 
+# and may cause increased bandwidth usage.
 ENABLE_LIVE_STREAM: false
+# Using an external proxy (such as https://codeberg.org/librarian/stream-proxy) 
+# for livestreams is recommended. Due to limitations with Go's HTTP library,
+# resolution with the built-in proxy is limited to 480p.
+LIVE_STREAMING_URL: ''
 # Instance privacy: This is required to get your instance listed. For more info,
 # See: https://codeberg.org/librarian/librarian/wiki/Instance-privacy
 INSTANCE_PRIVACY:
