@@ -1753,6 +1753,12 @@ engines:
       require_api_key: false
       results: HTML
 
+  - name: petalsearch images
+    engine: petal_images
+    shortcut: ptsi
+    disabled: false
+    timeout: 3.0
+
   - name: petalsearch news
     shortcut: ptsn
     categories: news
