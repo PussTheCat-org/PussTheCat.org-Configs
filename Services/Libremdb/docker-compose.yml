@@ -1,0 +1,13 @@
+services:
+
+  libremdb:
+    container_name: libremdb
+    image: quay.io/pussthecatorg/libremdb:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:2017:3000"
+    environment:
+      - "PORT=3000"
+      - "URL=https://libremdb.pussthecat.org"
+      - "NODE_ENV=production"
+      - "IMAGE_QUALITY=500"
