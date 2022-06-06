@@ -1,0 +1,11 @@
+services:
+
+  quetre:
+    container_name: quetre
+    image: quay.io/pussthecatorg/quetre:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:2018:3000"
+    environment:
+      - "NODE_ENV=production"
+      - "PORT=3000"
