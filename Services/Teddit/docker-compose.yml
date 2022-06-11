@@ -17,6 +17,7 @@ services:
       - "CACHE_CONTROL=true"
       - "CACHE_MAX_SIZE=10000"
       - "REDIS_HOST=teddit-redis"
+      - "CLEAN_HOMEPAGE=true"
     healthcheck:
       test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost:8080/about"]
       interval: 1m
