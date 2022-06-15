@@ -402,6 +402,30 @@ engines:
       require_api_key: false
       results: JSON
 
+  - name: yep
+    engine: json_engine
+    shortcut: yep
+    categories: general
+    disabled: true
+    paging: false
+    page_size: 10
+    content_html_to_text: true
+    title_html_to_text: true
+    search_url: https://api.yep.com/fs/1/?type=web&q={query}&no_correct=false
+    results_query: 1/results
+    title_query: title
+    url_query: url
+    content_query: snippet
+    timeout: 12.0
+    headers:
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
+      'Sec-Fetch-Dest': 'document'
+    about:
+      website: https://yep.com
+      use_official_api: false
+      require_api_key: false
+      results: JSON
+
   - name: currency
     engine: currency_convert
     categories: general
@@ -1067,6 +1091,26 @@ engines:
   #    query_str: 'SELECT * from my_table WHERE my_column = %(query)s'
   #    shortcut : psql
 
+  - name: pub.dev
+    engine: xpath
+    shortcut: pd
+    search_url: https://pub.dev/packages?q={query}&page={pageno}
+    paging: true
+    results_xpath: /html/body/main/div/div[@class="search-results"]/div[@class="packages"]/div
+    url_xpath: ./div/h3/a/@href
+    title_xpath: ./div/h3/a
+    content_xpath: ./p[@class="packages-description"]
+    categories: [packages, it]
+    timeout: 3.0
+    disabled: true
+    first_page_num: 1
+    about:
+      website: https://pub.dev/
+      official_api_documentation: https://pub.dev/help/api
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
   - name: pubmed
     engine: pubmed
     shortcut: pub
@@ -1616,7 +1660,7 @@ engines:
   # - name: yacy
   #   engine: yacy
   #   shortcut: ya
-  #   base_url: 'http://localhost:8090
+  #   base_url: http://localhost:8090
   # required if you aren't using HTTPS for your local yacy instance'
   #   enable_http: true
   #   number_of_results: 5
