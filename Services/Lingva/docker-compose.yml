@@ -8,7 +8,7 @@ services:
       - "127.0.0.1:1111:3000"
     environment:
       - "SITE_DOMAIN=lingva.pussthecat.org"
-      - "DARK_THEME=true"
+      - "FORCE_DEFAULT_THEME=dark"
       - "DEFAULT_SOURCE_LANG=auto"
       - "DEFAULT_TARGET_LANG=en"
     network_mode: bridge # https://stackoverflow.com/a/57152380
