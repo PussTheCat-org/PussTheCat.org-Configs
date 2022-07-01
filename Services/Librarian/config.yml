@@ -10,7 +10,8 @@ STREAMING_API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
 USE_HTTP3: false
 FIBER_PREFORK: false
 # Block access to claims in case of DMCA
-BLOCKED_CLAIMS: 'claimid,claim2'
+BLOCKED_CLAIMS: 
+  - claimId
 # AUTH_TOKEN and HMAC_KEY is automatically generated
 AUTH_TOKEN: ''
 HMAC_KEY: ''
@@ -25,6 +26,14 @@ ENABLE_LIVE_STREAM: true
 # for livestreams is recommended. Due to limitations with Go's HTTP library,
 # resolution with the built-in proxy is limited to 480p.
 LIVE_STREAMING_URL: ''
+# Rewrite links to other frontends
+FRONTEND:
+  youtube: 'https://redirect.invidious.io'
+  twitter: 'https://nitter.pussthecat.org'
+  imgur: 'https://rimgo.pussthecat.org'
+  instagram: 'https://bibliogram.pussthecat.org'
+  tiktok: 'https://proxitok.pussthecat.org'
+  reddit: 'https://teddit.pussthecat.org'
 # Instance privacy: This is required to get your instance listed. For more info,
 # See: https://codeberg.org/librarian/librarian/wiki/Instance-privacy
 INSTANCE_PRIVACY:
