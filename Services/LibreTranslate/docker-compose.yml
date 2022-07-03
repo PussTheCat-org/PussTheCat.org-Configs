@@ -8,8 +8,8 @@ services:
       - "127.0.0.1:2012:5000"
     environment:
       - "LT_CHAR_LIMIT=10000"
-      - "LT_REQ_LIMIT=15"
-      - "LT_BATCH_LIMIT=2"
+      - "LT_REQ_LIMIT=3"
+      - "LT_BATCH_LIMIT=1"
       - "LT_SSL=True"
       - "LT_FRONTEND_LANGUAGE_SOURCE=en"
       - "LT_FRONTEND_LANGUAGE_TARGET=fr"
