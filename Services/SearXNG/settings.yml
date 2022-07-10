@@ -89,10 +89,12 @@ ui:
   # query_in_title: When true, the result page's titles contains the query
   # it decreases the privacy, since the browser can records the page titles.
   query_in_title: false
+  # infinite_scroll: When true, automatically loads the next page when scrolling to bottom of the current page.
+  infinite_scroll: false
   # ui theme
   default_theme: simple
   # center the results ?
-  center_aligment: true
+  center_alignment: true
   # Default interface locale - leave blank to detect from browser information or
   # use codes from the 'locales' config section
   default_locale: ""
@@ -900,6 +902,13 @@ engines:
     engine: loc
     shortcut: loc
     categories: images
+    disabled: true
+
+  - name: lingva
+    engine: lingva
+    shortcut: lv
+    # set lingva instance in url, by default it will use the official instance
+    # url: https://lingva.ml
     disabled: true
 
   - name: lobste.rs
