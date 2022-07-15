@@ -1,9 +1,17 @@
 general:
-  debug: false              # Debug mode, only for development
-  instance_name: "SearXNG"  # displayed name
-  privacypolicy_url: false  # https://example.com/privacy
-  contact_url: false        # mailto:contact@example.com
-  enable_metrics: true      # record stats
+  # Debug mode, only for development
+  debug: false
+  # displayed name
+  instance_name: "SearXNG"
+  # For example: https://example.com/privacy
+  privacypolicy_url: false
+  # use true to use your own donation page written in searx/info/en/donate.md
+  # use false to disable the donation link
+  donation_url: https://docs.searxng.org/donate.html
+  # mailto:contact@example.com
+  contact_url: false
+  # record stats
+  enable_metrics: true
 
 brand:
   new_issue_url: https://github.com/searxng/searxng/issues/new
@@ -81,10 +89,12 @@ ui:
   # query_in_title: When true, the result page's titles contains the query
   # it decreases the privacy, since the browser can records the page titles.
   query_in_title: false
+  # infinite_scroll: When true, automatically loads the next page when scrolling to bottom of the current page.
+  infinite_scroll: false
   # ui theme
   default_theme: simple
   # center the results ?
-  center_aligment: false
+  center_alignment: false
   # Default interface locale - leave blank to detect from browser information or
   # use codes from the 'locales' config section
   default_locale: ""
@@ -429,6 +439,26 @@ engines:
       require_api_key: false
       results: JSON
 
+  - name: curlie
+    engine: xpath
+    shortcut: cl
+    categories: general
+    disabled: true
+    paging: true
+    lang_all: ''
+    search_url: https://curlie.org/search?q={query}&lang={lang}&start={pageno}&stime=92452189
+    page_size: 20
+    results_xpath: //div[@id="site-list-content"]/div[@class="site-item"]
+    url_xpath: ./div[@class="title-and-desc"]/a/@href
+    title_xpath: ./div[@class="title-and-desc"]/a/div
+    content_xpath: ./div[@class="title-and-desc"]/div[@class="site-descr"]
+    about:
+      website: https://curlie.org/
+      wikidata_id: Q60715723
+      use_official_api: false
+      require_api_key: false
+      results: HTML
+
   - name: currency
     engine: currency_convert
     categories: general
@@ -512,6 +542,12 @@ engines:
     engine: duckduckgo_images
     shortcut: ddi
     timeout: 3.0
+    disabled: true
+
+  - name: emojipedia
+    engine: emojipedia
+    timeout: 4.0
+    shortcut: em
     disabled: true
 
   - name: tineye
@@ -857,6 +893,12 @@ engines:
     engine: loc
     shortcut: loc
     categories: images
+
+  - name: lingva
+    engine: lingva
+    shortcut: lv
+    # set lingva instance in url, by default it will use the official instance
+    # url: https://lingva.ml
 
   - name: lobste.rs
     engine: xpath
