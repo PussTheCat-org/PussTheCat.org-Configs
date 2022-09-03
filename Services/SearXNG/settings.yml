@@ -121,6 +121,7 @@ ui:
 #
 # result_proxy:
 #   url: http://127.0.0.1:3000/
+#   # the key is a base64 encoded string, the YAML !!binary prefix is optional
 #   key: !!binary "your_morty_proxy_key"
 #   # [true|false] enable the "proxy" button next to each result
 #   proxify_results: true
@@ -1715,6 +1716,15 @@ engines:
     shortcut: szn
     engine: seznam
     disabled: true
+
+  # - name: deepl
+  #   engine: deepl
+  #   shortcut: dpl
+  #   # You can use the engine using the official stable API, but you need an API key
+  #   # See: https://www.deepl.com/pro-api?cta=header-pro-api
+  #   api_key: ''  # required!
+  #   timeout: 5.0
+  #   disabled: true
 
   - name: mojeek
     shortcut: mjk
