@@ -1,14 +1,10 @@
 DOMAIN: 'https://librarian.pussthecat.org'
 PORT: '3000'
+FIBER_PREFORK: false
 # Optional: Set address to bind to, example: 127.0.0.1
 ADDRESS: ''
 # Running a custom API server is not recommended and is not suitable for a public instance
 API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
-# Use a custom video streaming endpoint (if using custom API server or proxying videos)
-VIDEO_STREAMING_URL: ''
-STREAMING_API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
-USE_HTTP3: false
-FIBER_PREFORK: false
 # Block access to claims in case of DMCA
 BLOCKED_CLAIMS: 
   - claimId
@@ -19,21 +15,21 @@ HMAC_KEY: ''
 IMAGE_CACHE: true
 IMAGE_CACHE_DIR: '/var/cache/librarian'
 IMAGE_CACHE_CLEANUP_INTERVAL: 24h
-# Live streams are proxied through the instance (unless LIVE_STREAMING_URL is set) 
-# and may cause increased bandwidth usage.
-ENABLE_LIVE_STREAM: true
-# Using an external proxy (such as https://codeberg.org/librarian/stream-proxy) 
-# for livestreams is recommended. Due to limitations with Go's HTTP library,
-# resolution with the built-in proxy is limited to 480p.
-LIVE_STREAMING_URL: ''
-# Rewrite links to other frontends
+# The next 2 options will proxy video data through the instance.
+# This will cause increased bandwidth usage.
+# ENABLE_STREAM_PROXY proxies videos and ENABLE_LIVESTREAM enables livestreams.
+ENABLE_STREAM_PROXY: true
+ENABLE_LIVESTREAM: true
+# Advanced: Custom video streaming endpoint
+VIDEO_STREAMING_URL: ''
+# Rewrite links to other frontends. example: https://yt.domain.tld
 FRONTEND:
-  youtube: 'https://redirect.invidious.io'
-  twitter: 'https://nitter.pussthecat.org'
-  imgur: 'https://rimgo.pussthecat.org'
-  instagram: 'https://bibliogram.pussthecat.org'
-  tiktok: 'https://proxitok.pussthecat.org'
-  reddit: 'https://teddit.pussthecat.org'
+  youtube: ''
+  twitter: ''
+  imgur: ''
+  instagram: ''
+  tiktok: ''
+  reddit: ''
 # Instance privacy: This is required to get your instance listed. For more info,
 # See: https://codeberg.org/librarian/librarian/wiki/Instance-privacy
 INSTANCE_PRIVACY:
