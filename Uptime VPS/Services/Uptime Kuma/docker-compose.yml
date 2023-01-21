@@ -3,7 +3,7 @@ version: '3'
 services:
 
   uptime-kuma:
-    image: 'louislam/uptime-kuma:1'
+    image: 'louislam/uptime-kuma:<VERSION>'
     container_name: uptime-kuma
     volumes:
       - '/docker/uptime-kuma:/app/data'
