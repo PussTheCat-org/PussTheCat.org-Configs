@@ -7,7 +7,7 @@ general:
   privacypolicy_url: https://pussthecat.org/privacy/
   # use true to use your own donation page written in searx/info/en/donate.md
   # use false to disable the donation link
-  donation_url: false
+  donation_url: https://pussthecat.org/donate/
   # mailto:contact@example.com
   contact_url: https://pussthecat.org/about/
   # record stats
@@ -678,14 +678,6 @@ engines:
     engine: genius
     shortcut: gen
 
-  - name: gigablast
-    engine: gigablast
-    shortcut: gb
-    timeout: 4.0
-    disabled: true
-    additional_tests:
-      rosebud: *test_rosebud
-
   - name: gentoo
     engine: gentoo
     shortcut: ge
@@ -741,21 +733,8 @@ engines:
   - name: google
     engine: google
     shortcut: go
-    # see https://docs.searxng.org/src/searx.engines.google.html#module-searx.engines.google
-    use_mobile_ui: false
     # additional_tests:
     #   android: *test_android
-
-  # - name: google italian
-  #   engine: google
-  #   shortcut: goit
-  #   use_mobile_ui: false
-  #   language: it
-
-  # - name: google mobile ui
-  #   engine: google
-  #   shortcut: gomui
-  #   use_mobile_ui: true
 
   - name: google images
     engine: google_images
@@ -787,29 +766,18 @@ engines:
     shortcut: gos
 
   - name: google play apps
-    engine: google_play_apps
+    engine: google_play
+    categories: [files, apps]
     shortcut: gpa
+    play_categ: apps
     disabled: true
 
   - name: google play movies
-    engine: xpath
-    send_accept_language_header: true
-    search_url: https://play.google.com/store/search?q={query}&c=movies
-    results_xpath: '//div[@class="ImZGtf mpg5gc"]'
-    title_xpath: './/div[@class="RZEgze"]//div[@class="kCSSQe"]//a'
-    url_xpath: './/div[@class="RZEgze"]//div[@class="kCSSQe"]//a/@href'
-    content_xpath: './/div[@class="kCSSQe"]'
-    thumbnail_xpath: './/div[@class="uzcko"]/div/span[1]//img/@data-src'
+    engine: google_play
     categories: videos
     shortcut: gpm
+    play_categ: movies
     disabled: true
-    about:
-      website: https://play.google.com/
-      wikidata_id: Q79576
-      official_api_documentation:
-      use_official_api: false
-      require_api_key: false
-      results: HTML
 
   - name: gpodder
     engine: json_engine
@@ -1532,27 +1500,6 @@ engines:
     about:
       website: https://wiby.me/
 
-  - name: marginalia
-    engine: json_engine
-    shortcut: mar
-    categories: general
-    paging: false
-    # index: {"0": "popular", "1": "blogs", "2": "big_sites",
-    # "3": "default", "4": experimental"}
-    search_url: https://api.marginalia.nu/public/search/{query}?index=4&count=20
-    results_query: results
-    url_query: url
-    title_query: title
-    content_query: description
-    timeout: 1.5
-    disabled: false
-    about:
-      website: https://www.marginalia.nu/
-      official_api_documentation: https://api.marginalia.nu/
-      use_official_api: true
-      require_api_key: true
-      results: JSON
-
   - name: alexandria
     engine: json_engine
     shortcut: alx
@@ -1788,9 +1735,8 @@ engines:
     engine: peertube
     shortcut: ptb
     paging: true
-    # https://instances.joinpeertube.org/instances
-    base_url: https://peertube.biz/
-    # base_url: https://tube.tardis.world/
+    # alternatives see: https://instances.joinpeertube.org/instances
+    # base_url: https://tube.4aem.com
     categories: videos
     disabled: true
     timeout: 6.0
