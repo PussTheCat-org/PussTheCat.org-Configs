@@ -297,6 +297,19 @@ engines:
     shortcut: 9g
     disabled: true
 
+  - name: annas archive
+    engine: annas_archive
+    disabled: false
+    shortcut: aa
+
+  # - name: annas articles
+  #   engine: annas_archive
+  #   shortcut: aaa
+  #   # https://docs.searxng.org/src/searx.engines.annas_archive.html
+  #   aa_content: 'journal_article' # book_any .. magazine, standards_document
+  #   aa_ext: 'pdf'  # pdf, epub, ..
+  #   aa_sort: 'newest'  # newest, oldest, largest, smallest
+
   - name: apk mirror
     engine: apkmirror
     timeout: 4.0
@@ -447,6 +460,20 @@ engines:
     shortcut: cr
     timeout: 30
     disabled: true
+
+  - name: crowdview
+    engine: json_engine
+    shortcut: cv
+    categories: general
+    paging: false
+    search_url: https://crowdview-next-js.onrender.com/api/search-v3?query={query}
+    results_query: results
+    url_query: link
+    title_query: title
+    content_query: snippet
+    disabled: false
+    about:
+      website: https://crowdview.ai/
 
   - name: yep
     engine: json_engine
@@ -894,19 +921,11 @@ engines:
       require_api_key: false
       results: HTML
 
-  # Disabling zlibrary due to z-lib.org domain seizure
-  # https://github.com/searxng/searxng/pull/1937
-  #
-  # - name: z-library
-  #   engine: zlibrary
-  #   shortcut: zlib
-  #   categories: files
-  #   timeout: 3.0
-  #   # choose base_url, otherwise engine will do it at initialization time
-  #   # base_url: https://b-ok.cc
-  #   # base_url: https://de1lib.org
-  #   # base_url: https://booksc.eu   # does not have cover preview
-  #   # base_url: https://booksc.org  # does not have cover preview
+  - name: z-library
+    engine: zlibrary
+    shortcut: zlib
+    categories: files
+    timeout: 7.0
 
   - name: library of congress
     engine: loc
@@ -1418,15 +1437,21 @@ engines:
     disabled: true
 
   # torznab engine lets you query any torznab compatible indexer.  Using this
-  # engine in combination with Jackett (https://github.com/Jackett/Jackett)
+  # engine in combination with Jackett opens the possibility to query a lot of
   # opens the possibility to query a lot of public and private indexers directly
+  # public and private indexers directly from SearXNG. More details at:
   # from SearXNG.
+  # https://docs.searxng.org/src/searx.engines.torznab.html
   # - name: torznab
+  #
+  # - name: Torznab EZTV
   #   engine: torznab
-  #   shortcut: trz
-  #   base_url: http://localhost:9117/api/v2.0/indexers/all/results/torznab
+  #   shortcut: eztv
+  #   base_url: http://localhost:9117/api/v2.0/indexers/eztv/results/torznab
   #   enable_http: true  # if using localhost
   #   api_key: xxxxxxxxxxxxxxx
+  #   show_magnet_links: true
+  #   show_torrent_files: false
   #   # https://github.com/Jackett/Jackett/wiki/Jackett-Categories
   #   torznab_categories:  # optional
   #     - 2000
