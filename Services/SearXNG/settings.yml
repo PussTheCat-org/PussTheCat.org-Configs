@@ -79,7 +79,7 @@ server:
   # If your instance owns a /etc/searxng/settings.yml file, then set the following
   # values there.
 
-  secret_key: "[REDACTED]"  # Is overwritten by ${SEARXNG_SECRET}
+  secret_key: "XxL1dx5zGQ5CBdJDuvDsWru8JOomKVCKtPB7AB499HL30IK0KI"  # Is overwritten by ${SEARXNG_SECRET}
   # Proxying image results through searx
   image_proxy: true
   # 1.0 and 1.1 are supported
@@ -1130,7 +1130,7 @@ engines:
       use_official_api: true
       require_api_key: false
       results: JSON
-    disabled:true
+    disabled: true
 
   - name: odysee
     engine: odysee
@@ -1911,7 +1911,6 @@ engines:
     categories: videos
     disabled: true
     timeout: 6.0
-    disabled: true
 
   - name: mediathekviewweb
     engine: mediathekviewweb
