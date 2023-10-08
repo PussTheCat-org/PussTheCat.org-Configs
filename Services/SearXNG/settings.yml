@@ -610,6 +610,7 @@ engines:
   - name: duckduckgo
     engine: duckduckgo
     shortcut: ddg
+    disabled: false
 
   - name: duckduckgo images
     engine: duckduckgo_images
@@ -1341,7 +1342,7 @@ engines:
     categories: [general, web]
     additional_tests:
       rosebud: *test_rosebud
-    disabled: false
+    disabled: true
 
   - name: qwant news
     qwant_categ: news
@@ -1398,7 +1399,7 @@ engines:
     engine: reddit
     shortcut: re
     page_size: 25
-    disabled: true
+    disabled: false
 
   # Required dependency: redis
   # - name: myredis
@@ -1560,7 +1561,7 @@ engines:
     title_xpath: .//div[contains(@class,"title")]//h2
     content_xpath: .//div[contains(@class,"overview")]
     shortcut: tm
-    disabled: false
+    disabled: true
 
   # Requires Tor
   - name: torch
@@ -1846,7 +1847,7 @@ engines:
     suggestion_xpath: //div[@class="top-info"]/p[@class="top-info spell"]/em/a
     first_page_num: 0
     page_size: 10
-    disabled: true
+    disabled: false
     about:
       website: https://www.mojeek.com/
       wikidata_id: Q60747299
@@ -1967,7 +1968,7 @@ engines:
     shortcut: senews
     categories: news
     seekr_category: news
-    disabled: true
+    disabled: false
 
   - name: seekr images
     engine: seekr
