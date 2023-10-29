@@ -127,6 +127,8 @@ ui:
   # Perform search immediately if a category selected.
   # Disable to select multiple categories at once and start the search manually.
   search_on_category_select: true
+  # Hotkeys: default or vim
+  hotkeys: default
 
 # Lock arbitrary settings on the preferences page.  To find the ID of the user
 # setting you want to lock, check the ID of the form on the page "preferences".
@@ -613,9 +615,24 @@ engines:
     disabled: true
 
   - name: duckduckgo images
-    engine: duckduckgo_images
+    engine: duckduckgo_extra
+    categories: [images, web]
+    ddg_category: images
     shortcut: ddi
-    timeout: 3.0
+    disabled: false
+
+  - name: duckduckgo videos
+    engine: duckduckgo_extra
+    categories: [videos, web]
+    ddg_category: videos
+    shortcut: ddv
+    disabled: false
+
+  - name: duckduckgo news
+    engine: duckduckgo_extra
+    categories: [news, web]
+    ddg_category: news
+    shortcut: ddn
     disabled: false
 
   - name: duckduckgo weather
@@ -864,6 +881,11 @@ engines:
       require_api_key: false
       results: HTML
 
+  - name: hackernews
+    engine: hackernews
+    shortcut: hn
+    disabled: false
+
   - name: hoogle
     engine: xpath
     paging: true
@@ -1046,10 +1068,12 @@ engines:
     base_url: https://mastodon.social
     shortcut: mah
 
-  - name: matrixrooms
-    engine: matrixrooms
-    shortcut: mtrx
-    disabled: true
+  # - name: matrixrooms
+  #   engine: mrs
+  #   # https://docs.searxng.org/dev/engines/online/mrs.html
+  #   # base_url: https://mrs-api-host
+  #   shortcut: mtrx
+  #   disabled: true
 
   - name: metacpan
     engine: metacpan
@@ -1918,15 +1942,26 @@ engines:
     shortcut: mvw
     disabled: true
 
-  # - name: yacy
-  #   engine: yacy
-  #   shortcut: ya
-  #   base_url: http://localhost:8090
-  #   # required if you aren't using HTTPS for your local yacy instance'
-  #   enable_http: true
-  #   timeout: 3.0
-  #   # Yacy search mode. 'global' or 'local'.
-  #   search_mode: 'global'
+  - name: yacy
+    engine: yacy
+    categories: general
+    search_type: text
+    base_url: https://yacy.searchlab.eu
+    shortcut: ya
+    disabled: false
+    # required if you aren't using HTTPS for your local yacy instance
+    # https://docs.searxng.org/dev/engines/online/yacy.html
+    # enable_http: true
+    # timeout: 3.0
+    # search_mode: 'global'
+
+  - name: yacy images
+    engine: yacy
+    categories: images
+    search_type: image
+    base_url: https://yacy.searchlab.eu
+    shortcut: yai
+    disabled: false
 
   - name: rumble
     engine: rumble
